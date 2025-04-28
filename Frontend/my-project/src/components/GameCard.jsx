@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/GameCard.css';
 
 const GameCard = ({ game }) => {
@@ -13,6 +14,7 @@ const GameCard = ({ game }) => {
     const starColor = getStarColor(rating);
 
   return (
+    <Link to={`/review/${game.id}`} className="game-card-link">
     <div className="game-card">
       <div className="image-wrapper">
         <img src={game.image} alt={game.name} className="game-img" />
@@ -38,6 +40,7 @@ const GameCard = ({ game }) => {
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

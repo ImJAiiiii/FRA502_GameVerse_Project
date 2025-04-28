@@ -12,24 +12,28 @@ const Home = () => {
     // Mock data แทน API (ลองใช้ก่อนต่อ backend จริง)
     const dummyGames = [
         {
+            id: 0,
             name: "R.E.P.O",
             studio: "semiwork",
             rating: 10,
             image: "https://th.bing.com/th/id/OIP.Kov0aEK8JB9oIhz5lZ9ddQHaLH?rs=1&pid=ImgDetMain"
         },
         {
+          id: 1,
             name: "Overcooked2",
             studio: "Ghost Town Games Ltd., Team17",
             rating: 9,
             image: "https://th.bing.com/th/id/OIP.I5DAAmWSFlUNQNmb-Y5SpwHaHa?rs=1&pid=ImgDetMain"
         },
         {
+          id: 2,
             name: "Stardew Valley",
             studio:  "ConcernedApe",
             rating: 10,
             image: "https://th.bing.com/th/id/R.2c4bf1b641c57e84b40df079ec16984c?rik=SNf3Hc1w2Nti4g&pid=ImgRaw&r=0"
         },
         {
+          id: 3,
             name: "inZOI",
             studio: "inZOI Studio",
             rating: 9,

@@ -7,6 +7,10 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.game-card:hover {
+  transform: scale(1.02);
+}
+
 .image-wrapper {
   position: relative;
   width: 225px;
