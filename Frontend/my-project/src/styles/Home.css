@@ -1,0 +1,27 @@
+.home-container {
+    background: #141414;
+  }
+
+.header-bar {
+    background: #141414;
+    padding: 0.1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 10px #7A1CAC;
+
+}
+  .section-title {
+    font-family: "Audiowide", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 0.1rem;
+    color : #E6E6E6;
+    text-align: center;
+  }
+  
+  .game-grid {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    background-color: #141414;
+  }
+  
