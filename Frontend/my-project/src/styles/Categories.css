@@ -3,19 +3,6 @@
     padding: 1rem 2rem;
   }
 
-  .category-header {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: white;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.3rem;
-    font-family: 'Audiowide', cursive;
-    border-bottom: 1px solid #E6E6E6;
-    padding-bottom: 1rem;
-    gap: 1rem;
-  }
-
   .categories-content {
     display: flex;
     align-items: stretch;

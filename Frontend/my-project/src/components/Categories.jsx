@@ -3,7 +3,7 @@ import '../styles/Categories.css';
 const Categories = () => {
     return (
     <div className="categories-section">
-        <h2 className="category-header">Categories</h2>
+        <h2 className="sub-header">Categories</h2>
         <div className="categories-content">
             
             {/* ฝั่งซ้าย: Player Support */}

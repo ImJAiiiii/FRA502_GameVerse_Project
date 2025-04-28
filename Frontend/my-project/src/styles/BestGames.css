@@ -1,0 +1,104 @@
+.best-games-section {
+    position: relative;
+    padding: 1rem 2rem;
+  }
+
+  .best-game-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #E6E6E6;
+    padding-bottom: 0rem;
+    gap: 1rem;
+  }
+  
+  .best-game-title {
+    font-family: 'Audiowide', cursive;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  .best-game-gradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+      to top,
+      rgba(173, 73, 225, 1),
+      rgba(173, 73, 225, 1),
+      rgba(173, 73, 225, 0.5),
+      rgba(173, 73, 225, 0),
+      rgba(173, 73, 225, 0),
+      rgba(173, 73, 225, 0)
+    );
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    z-index: 1;
+    transition: background 0.3s ease;
+  }
+  
+  .best-games-list {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .best-game-card {
+    background: linear-gradient(to top, #AD49E1, #D9D9D9);
+    border-radius: 30px;
+    width: 225px;
+    height: 300px;
+    color: black;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+
+  .game-info {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    padding: 0.3rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 2;
+    text-align: left;
+    margin-left: 1rem;
+  }
+  
+  .rank-and-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .game-rank {
+    font-family: 'Audiowide', cursive;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: #141414;
+    margin: 0;
+  }
+  
+  .game-name {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #141414;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+  }

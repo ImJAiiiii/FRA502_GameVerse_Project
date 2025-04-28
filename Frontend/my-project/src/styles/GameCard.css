@@ -51,6 +51,7 @@
   height: 263px;
   object-fit: cover;
   border-radius: 30px;
+  object-position: top;
 }
 
 .game-info-overlay {
