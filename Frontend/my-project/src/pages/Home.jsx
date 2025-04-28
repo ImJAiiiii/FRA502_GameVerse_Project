@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import GameReview from '../components/GameReview';
 import '../styles/Home.css';
+import Categories from '../components/Categories';
 
 const Home = () => {
   const [games, setGames] = useState([]);
@@ -86,7 +87,7 @@ const Home = () => {
     <div className="home-container">
         <h1 className="section-title">GAME</h1>
       <GameReview games={games} />
-
+      <Categories />
     </div>
   );
 };
