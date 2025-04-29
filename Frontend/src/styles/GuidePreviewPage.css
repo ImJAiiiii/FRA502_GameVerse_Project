@@ -1,0 +1,41 @@
+.guide-preview-page {
+    background-color: #101010;
+    color: #e0e0e0;
+    padding: 2rem;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .guide-container {
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .guide-markdown h1,
+  .guide-markdown h2,
+  .guide-markdown h3 {
+    color: #e6e6ff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.2em;
+    margin-top: 1.5em;
+  }
+  
+  .guide-markdown p {
+    line-height: 1.8;
+    margin-bottom: 1em;
+  }
+  
+  .guide-markdown img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  
+  .guide-markdown a {
+    color: #8a64ff;
+    text-decoration: underline;
+  }
+  

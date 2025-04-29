@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import GuideCard from '../components/GuideCard';
 import QABoard from '../components/QABoard';
 import '../styles/Community.css';
@@ -30,14 +31,19 @@ const Community = () => {
   ];
 
   return (
-    <div className="community-page">
-      <h1 className="section-title">COMMUNITY</h1>
-      <h2 className="sub-header">Guides</h2>
-      <div className="guides-section">
-        {guides.map((guide, index) => (
-          <GuideCard key={index} guide={guide} />
-        ))}
-      </div>
+  <div className="community-page">
+    <h1 className="section-title">COMMUNITY</h1>
+
+    <div className="guides-header">
+      <h2>Guides</h2>
+      <Link to="/create-guide" className="create-guide-btn">+ Create your own</Link>
+    </div>
+
+    <div className="guide-list">
+      {guides.map((guide, index) => (
+        <GuideCard key={index} guide={guide} />
+      ))}
+    </div>
 
       <h2 className="sub-header">Q&A</h2>
       <QABoard />

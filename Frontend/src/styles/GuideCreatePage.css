@@ -1,0 +1,51 @@
+.guide-create-page {
+    max-width: 700px;
+    margin: auto;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    padding: 2rem;
+    background: #1c1c1c;
+    border-radius: 12px;
+  }
+  
+  .guide-create-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .guide-create-page input,
+  .guide-create-page select,
+  .guide-create-page textarea {
+    background: #2a2a2a;
+    border: 1px solid #555;
+    border-radius: 8px;
+    padding: 0.8rem;
+    color: white;
+  }
+  
+  .guide-create-page button {
+    background-color: #AD49E1;
+    border: none;
+    padding: 0.8rem;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .category-checkboxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* แบ่ง 2 คอลัมน์ */
+    gap: 0.8rem 1.5rem; /* เว้นระยะห่างแนวตั้ง-แนวนอน */
+    margin-bottom: 1.5rem;
+  }
+  
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #e0e0e0;
+    font-size: 1rem;
+  }
+  
