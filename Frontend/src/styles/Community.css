@@ -13,13 +13,19 @@
     margin-bottom: 2rem;
     flex-wrap: wrap;
   }
+
+  .guide-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; /* ระยะห่างระหว่างการ์ด */
+  }  
   
   .guide-card {
     background: #1e1e1e;
     border-radius: 12px;
     overflow: hidden;
     display: flex;
-    width: 565px;
+    width: 430px;
     height: 180px;
     padding: 1rem;
     gap: 1rem;
