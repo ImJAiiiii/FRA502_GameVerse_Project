@@ -1,0 +1,207 @@
+.review-page {
+    padding: 2rem;
+    color: white;
+  }
+
+  .review-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .review-sidebar {
+    background-color: #1E1E1E;
+    padding: 1.5rem;
+    width: 400px;
+    text-align: center;
+    margin: 1rem auto;
+  }
+  
+  .review-header {
+    margin-bottom: 2rem;
+  }
+  
+  .review-header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .review-image {
+    width: 280px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .review-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .review-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    color:#e0e0e0;
+    margin-bottom: 0.5rem;
+  }
+
+  .review-name {
+    font-family: 'Audiowide', cursive;
+    font-weight: bold;
+    font-size: 2rem;
+    color:#e0e0e0;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-left: 1.5rem;
+    justify-content: flex-start;
+  }
+  
+  .tag {
+    padding: 0.2rem 0.8rem;
+    border: 2px solid #EBD3F8;
+    border-radius: 5px;
+    color: #EBD3F8;
+    font-size: 0.75rem;
+    font-family: "Inter", sans-serif;
+    background: transparent;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  
+  .tag:hover {
+    border: none;
+    border: 2px solid RGB(235, 211, 248, 0.75);
+    background-color: RGB(235, 211, 248, 0.75);
+    color: #2E073F
+  }
+
+  .developer-info {
+    display: flex;
+    justify-content: space-between; /* ⭐ space ซ้าย-ขวา */
+    align-items: center;
+    width: 80%;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    color: white;
+  }
+  
+  .review-studio, .review-release {
+    font-weight: 500;
+    color: #AD49E1; /* หรือสีม่วงแบบที่ใช้ใน theme */
+  }
+  
+  .review-price {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 0.2rem;
+    color: #e0e0e0;
+    text-align: left;
+  }
+  
+  .review-rating {
+    text-align: left;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    color: #ffc107;
+  }
+  
+  .download-btn {
+    margin-top: 1rem;
+    background-color: #7A1CAC;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  .download-btn:hover {
+    background-color: #9e40d9;
+  }
+  
+  .review-description{
+    font-family: "Noto Sans Thai", sans-serif;
+  }
+
+  .review-content {
+    width: 70%;
+    padding: 2rem;
+    border-radius: 20px;
+    font-family: 'Inter', 'sans-serif';
+  }
+  
+  .content-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .review-subtitle {
+    font-style: italic;
+    color: #b3b3b3;
+    margin-bottom: 2rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+  }
+  
+  section h2 {
+    font-size: 1.5rem;
+    color: #EBD3F8;
+    margin-bottom: 0.5rem;
+    font-family: "Noto Sans Thai", sans-serif;
+  }
+  
+  .review-description p,
+  .review-description ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    font-family: "Noto Sans Thai", sans-serif;
+  }
+  
+  
+  .review-screenshot {
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+    border-radius: 16px;
+  }
+  
+  .comment-section {
+    margin-top: 3rem;
+  }
+  
+  .comment-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #7A1CAC;
+  }
+  
+  .comment {
+    background: #1e1e1e;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .comment p {
+    margin: 0;
+  }

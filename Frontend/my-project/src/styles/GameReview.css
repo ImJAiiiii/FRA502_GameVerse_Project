@@ -1,0 +1,83 @@
+.review-section {
+    padding: 1rem 2rem;
+    position: relative;
+  }
+  
+  .review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-family: 'Audiowide', cursive;
+    border-bottom: 1px solid #E6E6E6;
+    padding-bottom: 0rem;
+    gap: 1rem;
+  }
+  
+  .review-title {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 400;
+  }
+  
+  .see-all {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    font-weight: normal;
+    cursor: pointer;
+  }
+
+  .see-all:hover {
+    color :#7A1CAC;
+  }
+  
+  .game-list-wrapper {
+    position: relative;
+    overflow-x: auto;
+  }
+  
+  .game-list {
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scroll-buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 0.5rem;
+  }
+  .scroll-btn, .scroll-btn-left {
+    background: #9747FF;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+  }
+
+.scroll-btn:hover, .scroll-btn-left:hover {
+  background: #2E073F;
+  color: #9747FF
+}
+
+.game-list {
+  cursor: grab;
+}
+
+.game-list:active {
+  cursor: grabbing;
+}
