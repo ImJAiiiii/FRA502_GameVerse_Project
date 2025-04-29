@@ -3,19 +3,22 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const commentRoutes = require('./routes/comments');
-require('./utils/database'); // แค่เรียกมาเพื่อสร้าง table
+const categoryRoutes = require('./routes/categories');
+const genreRoutes = require('./routes/genres');
+const gameRoutes = require('./routes/games');
+require('./utils/database');
 
 const app = express();
 const port = 3000;
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-// Routes
 app.use('/api/reviews', commentRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/genres', genreRoutes);
+app.use('/api/games', gameRoutes);
 
-// Start server
 app.listen(port, () => {
   console.log(`GameVerse Back-end server running at http://localhost:${port}`);
 });
