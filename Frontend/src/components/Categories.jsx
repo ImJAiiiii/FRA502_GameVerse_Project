@@ -11,7 +11,6 @@ const Categories = () => {
                 <h3 className="category-title">PLAYER SUPPORT</h3>
                 <ul className="category-list">
                     <li>Co-Operative</li>
-                    <li>LAN</li>
                     <li>Local & Party</li>
                     <li>MMO</li>
                     <li>Multiplayer</li>
