@@ -9,7 +9,11 @@ const Home = () => {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
-    // Mock data แทน API (ลองใช้ก่อนต่อ backend จริง)
+    // [BACKEND]: เปลี่ยนจาก dummy เป็นการเรียก API จริง
+    // ตัวอย่าง:
+    // axios.get('/api/games')
+    //   .then(res => setGames(res.data))
+    //   .catch(err => console.error(err));
     const dummyGames = [
         {
             id: 0,
@@ -104,7 +108,11 @@ const Home = () => {
   return (
     <div className="home-container">
         <h1 className="section-title">GAME</h1>
+
+       {/* [BACKEND]: ต้องมี endpoint ที่คืนข้อมูลเกมทั้งหมดหรือแบบแบ่งหน้า */}
       <GameReview games={games} />
+
+      {/* [BACKEND]: Categories ควรถูกดึงจากฐานข้อมูลหรือ enum กลาง */}
       <Categories />
       <BestGames bestGames={dummyBestGames} />
     </div>

@@ -81,3 +81,24 @@
 .game-list:active {
   cursor: grabbing;
 }
+
+.create-review-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.create-review-btn {
+  font-family: 'Inter', sans-serif;
+  background-color: #AD49E1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.create-review-btn:hover {
+  background-color: #9136c6;
+}

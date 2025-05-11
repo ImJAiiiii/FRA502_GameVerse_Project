@@ -4,6 +4,7 @@ import '../styles/GuideCreatePage.css';
 import MarkdownIt from 'markdown-it';
 import MdEditor from 'react-markdown-editor-lite';
 import 'react-markdown-editor-lite/lib/index.css';
+import '../styles/GuideDetailPage.css';
 
 const mdParser = new MarkdownIt();
 
@@ -23,6 +24,13 @@ const GuideCreatePage = () => {
   const [agree, setAgree] = useState(false);
   const [content, setContent] = useState('');
   const navigate = useNavigate();
+
+  const toggleCategory = (cat) => {
+    setSelectedCategories((prev) =>
+      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat]
+    );
+  };
+
   useEffect(() => {
     const savedData = sessionStorage.getItem('guideFormData');
     if (savedData) {
@@ -35,6 +43,7 @@ const GuideCreatePage = () => {
       setSelectedCategories(parsed.selectedCategories || []);
     }
   }, []);
+
 
   const handlePreview = () => {
     const formData = {
@@ -55,15 +64,23 @@ const GuideCreatePage = () => {
       alert("You must confirm ownership to proceed.");
       return;
     }
-    // Send data to backend or store locally
-    console.log('Creating guide with:', selectedCategories);
+  
+    const newGuide = {
+      title,
+      image: image || '',  // Assign the image URL here
+      description,
+      content, // Markdown content, backend อาจต้องเก็บทั้ง raw และ rendered (ถ้า render server-side)
+      rating: 5,
+      votes: 0,
+    };
+  
+    const existing = JSON.parse(localStorage.getItem('communityGuides') || '[]');
+    localStorage.setItem('communityGuides', JSON.stringify([newGuide, ...existing]));
+  
+    navigate('/community');
   };
-
-  const toggleCategory = (cat) => {
-    setSelectedCategories(prev =>
-      prev.includes(cat) ? prev.filter(c => c !== cat) : [...prev, cat]
-    );
-  };
+  
+  
 
   return (
     <div className="guide-create-page">
@@ -78,12 +95,14 @@ const GuideCreatePage = () => {
           required
         />
 
-        <label>Branding Image</label>
+        <label>Branding Image URL</label>
         <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => setImage(e.target.files[0])}
+          type="text"
+          placeholder="Paste image URL (e.g., https://...)"
+          value={image || ''}
+          onChange={(e) => setImage(e.target.value)}
         />
+
 
         <label>Language</label>
         <select value={language} onChange={(e) => setLanguage(e.target.value)}>
