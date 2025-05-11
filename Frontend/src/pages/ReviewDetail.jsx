@@ -5,6 +5,14 @@ import '../styles/ReviewDetail.css';
 
 const ReviewDetail = () => {
   const { id } = useParams();
+
+  // [BACKEND]: fetch จาก API เช่น /api/reviews/:id
+  // const [game, setGame] = useState(null);
+  // useEffect(() => {
+  //   fetch(`/api/reviews/${id}`)
+  //     .then(res => res.json())
+  //     .then(data => setGame(data));
+  // }, [id]);
   const game = dummyReviews.find(g => g.id === parseInt(id));
 
   if (!game) {
@@ -19,6 +27,8 @@ const ReviewDetail = () => {
             <img src={game.image} alt={game.name} className="review-image" />
             <div className="review-info">
                 <h1 className="review-name">{game.name}</h1>
+
+                {/* [BACKEND]: แยก genre เป็น array จาก backend */}
                 <div className="tag-list">
                 {game.genre.split(',').map((tag, index) => (
                     <span key={index} className="tag">{tag.trim()}</span>
@@ -41,13 +51,13 @@ const ReviewDetail = () => {
 
             {/* ฝั่งขวา (เนื้อหา Review) */}
             <div className="review-content">
-            <h1 className="review-title">GameVerse Review 01: {game.name}</h1>
+            <h1 className="review-title">GameVerse Review: {game.name}</h1>
             <a className="review-link" href="https://visualgamer.com/r-e-p-o-survival-horror-game-multiplayer-pc-steam/">รีวิวโดย VisualGamer</a>
             <div className="review-description">
                 <p>{game.description}</p>
                 <h2>เนื้อเรื่องเกม</h2>
                 <p>{game.description2}</p>
-                {/* เพิ่มรูปเกมหรือ Section อื่นๆ ได้ตรงนี้ */}
+                {/* [BACKEND]: สามารถรองรับ content เป็น markdown/HTML */}
             </div>
             </div>
         </div>
