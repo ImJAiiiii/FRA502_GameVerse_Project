@@ -4,35 +4,49 @@ const db = require('../utils/database');
 
 router.get('/', (req, res) => {
   const query = `
-    SELECT games.id, games.name, games.developer, games.release_date, games.price,
-           genres.name as genre_name
-    FROM games
-    LEFT JOIN game_genres ON games.id = game_genres.game_id
-    LEFT JOIN genres ON genres.id = game_genres.genre_id
+    SELECT g.*, GROUP_CONCAT(gg.genre_id) as genre_ids, GROUP_CONCAT(genres.name) as genres
+    FROM games g
+    LEFT JOIN game_genres gg ON g.id = gg.game_id
+    LEFT JOIN genres ON genres.id = gg.genre_id
+    GROUP BY g.id
   `;
 
   db.all(query, [], (err, rows) => {
-    if (err) {
-      res.status(500).json({ error: err.message });
-      return;
-    }
-    const grouped = {};
-    rows.forEach(row => {
-      if (!grouped[row.id]) {
-        grouped[row.id] = {
-          id: row.id,
-          name: row.name,
-          developer: row.developer,
-          release_date: row.release_date,
-          price: row.price,
-          genres: []
-        };
-      }
-      if (row.genre_name) grouped[row.id].genres.push(row.genre_name);
-    });
+    if (err) return res.status(500).json({ error: err.message });
 
-    res.json(Object.values(grouped));
+    const games = rows.map(row => ({
+      ...row,
+      genres: row.genres ? row.genres.split(',') : []
+    }));
+
+    res.json(games);
   });
+});
+
+router.post('/', (req, res) => {
+  const { title, name, developer, release_date, price, image_url, rating, description, review_content, genre_ids } = req.body;
+
+  if (!name || !developer || !release_date || !price || !Array.isArray(genre_ids)) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
+  const insert = db.prepare(`
+    INSERT INTO games (title, name, developer, release_date, price, image_url, rating, description, review_content)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+
+  insert.run([title, name, developer, release_date, price, image_url, rating, description, review_content], function (err) {
+    if (err) return res.status(500).json({ error: err.message });
+
+    const gameId = this.lastID;
+    const stmt = db.prepare('INSERT INTO game_genres (game_id, genre_id) VALUES (?, ?)');
+    genre_ids.forEach(id => stmt.run([gameId, id]));
+    stmt.finalize();
+
+    res.status(201).json({ id: gameId });
+  });
+
+  insert.finalize();
 });
 
 module.exports = router;

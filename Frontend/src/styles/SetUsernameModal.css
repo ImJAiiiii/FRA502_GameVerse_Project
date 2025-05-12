@@ -1,0 +1,45 @@
+.username-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.username-modal {
+  background: #1f1f1f;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  width: 90%;
+  max-width: 400px;
+}
+
+.username-modal input {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  width: 80%;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+}
+
+.username-modal button {
+  margin-top: 1rem;
+  background: #AD49E1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.username-modal button:hover {
+  background: white;
+  color: #AD49E1;
+}

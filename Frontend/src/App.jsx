@@ -8,11 +8,13 @@ import GuideCreatePage from './pages/GuideCreatePage';
 import GuidePreviewPage from './pages/GuidePreviewPage';
 import GuideDetailPage from './pages/GuideDetailPage';
 import CreateReviewPage from './pages/CreateReviewPage';
+import SetUsernameModal from './components/SetUsernameModal'; // ✅ import modal
 
 function App() {
   return (
     <Router>
-      <Navbar /> {/* วาง Navbar ไว้ข้างนอก Routes */}
+      <Navbar />
+      <SetUsernameModal /> {/* ✅ แสดง modal ดักชื่อก่อนเข้าสู่ Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />

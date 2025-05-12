@@ -43,6 +43,42 @@ const db = new sqlite3.Database(dbPath, (err) => {
       FOREIGN KEY (game_id) REFERENCES games(id),
       FOREIGN KEY (genre_id) REFERENCES genres(id)
     )`);
+db.run(`CREATE TABLE IF NOT EXISTS guides (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT,
+      content TEXT,
+      image_url TEXT,
+      language TEXT,
+      author TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )`);
+
+    db.run(`CREATE TABLE IF NOT EXISTS guide_categories (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      guide_id INTEGER,
+      category TEXT,
+      FOREIGN KEY (guide_id) REFERENCES guides(id)
+    )`);
+
+    db.run(`CREATE TABLE IF NOT EXISTS games (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT,
+      name TEXT,
+      developer TEXT,
+      release_date TEXT,
+      price REAL,
+      image_url TEXT,
+      rating INTEGER,
+      description TEXT,
+      review_content TEXT
+    )`);
+    db.run(`CREATE TABLE IF NOT EXISTS questions (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT,
+      content TEXT,
+      author TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )`);
 
     db.serialize(() => {
       db.run(`INSERT OR IGNORE INTO categories (id, name) VALUES
