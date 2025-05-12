@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Categories.css';
 const Categories = () => {
+
+    const playerSupport = ['Co-Operative', 'Local & Party', 'MMO', 'Multiplayer', 'Online Competitive', 'Singleplayer'];
+    const genres = ['Action', 'Adventure', 'First-Person Shooter', 'Farming & Crafting', 'Horror', 'Puzzle', 'Simulation', 'Sports & Racing', 'Strategy'];
+
     return (
     <div className="categories-section">
         <h2 className="sub-header">Categories</h2>
@@ -10,12 +15,9 @@ const Categories = () => {
             <div className="category-block">
                 <h3 className="category-title">PLAYER SUPPORT</h3>
                 <ul className="category-list">
-                    <li>Co-Operative</li>
-                    <li>Local & Party</li>
-                    <li>MMO</li>
-                    <li>Multiplayer</li>
-                    <li>Online Competitive</li>
-                    <li>Singleplayer</li>
+                {playerSupport.map((item) => (
+                    <li key={item}><Link to={`/category/${encodeURIComponent(item)}`}>{item}</Link></li>
+                ))}
                 </ul>
             </div>
 

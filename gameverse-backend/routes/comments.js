@@ -17,22 +17,20 @@ router.get('/:id/comments', (req, res) => {
 // POST new comment
 router.post('/:id/comments', (req, res) => {
   const reviewId = req.params.id;
-  const { name, content } = req.body;
+  const { name, content } = req.body; // รับ name จาก body ด้วย
 
   if (!name || !content) {
-    res.status(400).json({ error: 'Name and content are required.' });
-    return;
+    return res.status(400).json({ error: 'Name and content are required.' });
   }
 
-  const stmt = db.prepare('INSERT INTO comments (review_id, name, content) VALUES (?, ?, ?)');
+  const stmt = db.prepare(
+    'INSERT INTO comments (review_id, name, content) VALUES (?, ?, ?)'
+  );
   stmt.run([reviewId, name, content], function (err) {
-    if (err) {
-      res.status(500).json({ error: err.message });
-      return;
-    }
+    if (err) return res.status(500).json({ error: err.message });
     res.status(201).json({ id: this.lastID });
   });
-  stmt.finalize();
 });
+
 
 module.exports = router;

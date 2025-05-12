@@ -35,6 +35,12 @@
     line-height: 1.8rem;
   }
 
+  .category-list a {
+  color: white;           /* ทำให้ลิงก์เป็นสีขาว */
+  text-decoration: none;  /* ไม่ขีดเส้นใต้ (ถ้าต้องการ) */
+  transition: color 0.2s ease;
+}
+
   .category-list li {
     transition: color 0.3s ease, text-shadow 0.3s ease;
     cursor: pointer;

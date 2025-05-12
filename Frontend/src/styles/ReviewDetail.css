@@ -136,6 +136,7 @@
   }
   
   .review-description{
+    max-width: 80%;
     font-family: "Noto Sans Thai", sans-serif;
   }
 
@@ -184,6 +185,14 @@
     margin: 2rem 0;
     border-radius: 16px;
   }
+
+  .review-markdown img {
+  max-width: 100%;  /* ขนาดสูงสุดจะเป็น 100% ของขนาด parent */
+  max-height: 500px;  /* จำกัดความสูง */
+  object-fit: cover;  /* ปรับขนาดรูปให้พอดีกับกรอบ */
+  border-radius: 10px;  /* ขอบมนเล็กน้อย */
+}
+
   
   .comment-section {
     margin-top: 3rem;

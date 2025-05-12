@@ -8,7 +8,8 @@ import GuideCreatePage from './pages/GuideCreatePage';
 import GuidePreviewPage from './pages/GuidePreviewPage';
 import GuideDetailPage from './pages/GuideDetailPage';
 import CreateReviewPage from './pages/CreateReviewPage';
-import SetUsernameModal from './components/SetUsernameModal'; // ✅ import modal
+import SetUsernameModal from './components/SetUsernameModal';
+import CategoryReviewPage from './pages/CategoryReviewPage';
 
 function App() {
   return (
@@ -18,11 +19,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />
-        <Route path="/review/:id" element={<ReviewDetail />} />
+        <Route path="/review-detail" element={<ReviewDetail />} />
         <Route path="/create-guide" element={<GuideCreatePage />} />
         <Route path="/guide-preview" element={<GuidePreviewPage />} />
         <Route path="/guide-detail" element={<GuideDetailPage />} />
         <Route path="/create-review" element={<CreateReviewPage />} />
+        <Route path="/Category-review" element={<CategoryReviewPage />} />
       </Routes>
     </Router>
   );

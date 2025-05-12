@@ -67,6 +67,7 @@ const GuideCreatePage = () => {
   
     const newGuide = {
       title,
+      author: localStorage.getItem('username') || 'Anonymous',
       image: image || '',  // Assign the image URL here
       description,
       content, // Markdown content, backend อาจต้องเก็บทั้ง raw และ rendered (ถ้า render server-side)

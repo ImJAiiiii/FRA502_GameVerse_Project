@@ -41,7 +41,7 @@ const GameReview = ({ games }) => {
   return (
     <div className="review-section">
       <div className="review-header">
-        <h2 className="review-title">Game Review</h2>
+        <h2 className="game-review-title">Game Review</h2>
         <div className="scroll-buttons"></div>
           {/* ปุ่มเลื่อนซ้าย */}
           <button className="scroll-btn-left" onClick={scrollLeftFunc}>
@@ -81,7 +81,7 @@ const GameReview = ({ games }) => {
       <div className="create-review-btn-wrapper">
         <a href="/create-review" className="create-review-btn">+ Create your review</a>
       </div>
-      
+
     </div>
   );
 };

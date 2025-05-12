@@ -30,10 +30,15 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
     db.run(`CREATE TABLE IF NOT EXISTS games (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT,
       name TEXT,
       developer TEXT,
       release_date TEXT,
-      price REAL
+      price REAL,
+      image_url TEXT,
+      rating INTEGER,
+      description TEXT,       -- 🟡 เก็บสรุป review
+      review_content TEXT     -- 🟢 เก็บเนื้อหาแบบ markdown/html
     )`);
 
     db.run(`CREATE TABLE IF NOT EXISTS game_genres (

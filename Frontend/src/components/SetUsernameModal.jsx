@@ -22,14 +22,14 @@ export default function SetUsernameModal() {
   return (
     <div className="username-modal-backdrop">
       <div className="username-modal">
-        <h2>ตั้งชื่อเล่นก่อนใช้งาน</h2>
+        <h2>Set Your Nickname Before You Start</h2>
         <input
           type="text"
-          placeholder="ใส่ชื่อเล่นของคุณ"
+          placeholder=" Enter your nickname"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <button onClick={handleSave}>บันทึก</button>
+        <button onClick={handleSave}>Save</button>
       </div>
     </div>
   );
